@@ -44,8 +44,8 @@ const WelcomeScreen: React.FC = () => {
               Instructions
             </h3>
             <div className="mt-1 flex flex-col pl-7">
-              <p className="text-sm text-slate-600 font-medium">Read carefully and understand before proceeding.</p>
-              <p className="text-xs text-slate-500 font-malayalam mt-0.5">തുടരുന്നതിന് മുൻപ് താഴെ പറയുന്നവ ശ്രദ്ധാപൂർവ്വം വായിച്ചു മനസ്സിലാക്കുക.</p>
+              <p className="text-sm sm:text-base text-danger font-bold tracking-wide">Read carefully and understand before proceeding!</p>
+              <p className="text-xs sm:text-sm text-danger/90 font-bold font-malayalam mt-0.5">തുടരുന്നതിന് മുൻപ് താഴെ പറയുന്നവ ശ്രദ്ധാപൂർവ്വം വായിച്ചു മനസ്സിലാക്കുക.</p>
             </div>
           </div>
           
