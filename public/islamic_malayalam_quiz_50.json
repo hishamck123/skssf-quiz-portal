@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "question": "അവസാന പ്രവാചകൻ ആര്?",
+    "options": [
+      "മൂസ (അ)",
+      "ഈസാ (അ)",
+      "മുഹമ്മദ് ﷺ",
+      "ഇബ്രാഹീം (അ)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "മുഹമ്മദ് ﷺ ആണ് അവസാന പ്രവാചകൻ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 2,
+    "question": "ഖുർആൻ അവതരിച്ചത് ഏത് മാസത്തിലാണ്?",
+    "options": [
+      "ശവ്വാൽ",
+      "റജബ്",
+      "റമദാൻ",
+      "സഫർ"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ഖുർആൻ റമദാനിൽ അവതരിക്കാൻ ആരംഭിച്ചു.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 3,
+    "question": "ഇസ്ലാമിന്റെ ആദ്യ ഖലീഫ ആര്?",
+    "options": [
+      "ഉമർ (റ)",
+      "അലി (റ)",
+      "ഉസ്മാൻ (റ)",
+      "അബൂബക്കർ (റ)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "അബൂബക്കർ (റ) ആദ്യ ഖലീഫയാണ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 4,
+    "question": "ഖുർആനിലെ ആദ്യ സൂറത്ത് ഏത്?",
+    "options": [
+      "ഇഖ്‌ലാസ്",
+      "അൽ-ഫാത്തിഹ",
+      "അൽ-ബഖറ",
+      "അന്നാസ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "അൽ-ഫാത്തിഹയാണ് ആദ്യ സൂറത്ത്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 5,
+    "question": "ദിവസത്തിൽ എത്ര നിർബന്ധ നമസ്കാരങ്ങളുണ്ട്?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctAnswer": 2,
+    "explanation": "അഞ്ച് നേരം നമസ്കാരം നിർബന്ധമാണ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 6,
+    "question": "കഅ്ബ സ്ഥിതിചെയ്യുന്നത് എവിടെ?",
+    "options": [
+      "മദീന",
+      "മക്ക",
+      "ജിദ്ദ",
+      "തായിഫ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "കഅ്ബ മക്കയിലാണ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 7,
+    "question": "നമസ്കാരത്തിന്റെ ദിശ എന്താണ്?",
+    "options": [
+      "വടക്ക്",
+      "തെക്ക്",
+      "ഖിബ്ല",
+      "കിഴക്ക്"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ഖിബ്ലയിലേക്കാണ് നമസ്കാരം.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 8,
+    "question": "ഹജ്ജ് നിർബന്ധമായ സ്ഥലം?",
+    "options": [
+      "മദീന",
+      "മക്ക",
+      "ജറുസലേം",
+      "തായിഫ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ഹജ്ജ് മക്കയിലാണ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 9,
+    "question": "നോമ്പിന് ശേഷം വരുന്ന പെരുന്നാൾ?",
+    "options": [
+      "ബക്രീദ്",
+      "ഈദുൽ ഫിത്വർ",
+      "മൗലിദ്",
+      "ആശൂറ"
+    ],
+    "correctAnswer": 1,
+    "explanation": "റമദാനിന് ശേഷം ഈദുൽ ഫിത്വർ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 10,
+    "question": "സകാത്ത് ഇസ്ലാമിന്റെ എത്രാമത്തെ തൂൺ?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": 2,
+    "explanation": "സകാത്ത് നാലാമത്തെ തൂണാണ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 11,
+    "question": "ഖുർആനിൽ എത്ര സൂറത്തുകൾ?",
+    "options": [
+      "100",
+      "110",
+      "114",
+      "120"
+    ],
+    "correctAnswer": 2,
+    "explanation": "114 സൂറത്തുകൾ ഉണ്ട്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 12,
+    "question": "നബി ﷺ ജനിച്ച നഗരം?",
+    "options": [
+      "മക്ക",
+      "മദീന",
+      "ജിദ്ദ",
+      "തായിഫ്"
+    ],
+    "correctAnswer": 0,
+    "explanation": "മക്ക.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 13,
+    "question": "ഹിജ്റ നടന്ന നഗരം?",
+    "options": [
+      "മക്ക",
+      "മദീന",
+      "ബദർ",
+      "ഉഹുദ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "മദീന.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 14,
+    "question": "നബി ﷺയുടെ പിതാവ്?",
+    "options": [
+      "അബ്ദുല്ല",
+      "അബൂത്വാലിബ്",
+      "ഹംസ",
+      "അബ്ബാസ്"
+    ],
+    "correctAnswer": 0,
+    "explanation": "അബ്ദുല്ല.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 15,
+    "question": "നബി ﷺയുടെ മാതാവ്?",
+    "options": [
+      "ആയിശ",
+      "ഖദീജ",
+      "ആമിന",
+      "ഹഫ്സ"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ആമിന.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 16,
+    "question": "ആദ്യ ഭാര്യ?",
+    "options": [
+      "ആയിശ",
+      "ഹഫ്സ",
+      "ഖദീജ",
+      "സഫിയ്യ"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ഖദീജ (റ).",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 17,
+    "question": "ആദ്യ വഹ്യ് ലഭിച്ച ഗുഹ?",
+    "options": [
+      "ഹിറ",
+      "സൗർ",
+      "ഉഹുദ്",
+      "നൂർ"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ഹിറ ഗുഹ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 18,
+    "question": "ആദ്യമായി അവതരിച്ച വചനം?",
+    "options": [
+      "കുൽ",
+      "ഇഖ്‌റഅ്",
+      "അൽഹംദു",
+      "ബിസ്മില്ലാഹ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ഇഖ്‌റഅ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 19,
+    "question": "നമസ്കാരത്തിന് വിളിക്കുന്നത്?",
+    "options": [
+      "ഇഖാമത്ത്",
+      "അദാൻ",
+      "തക്ബീർ",
+      "ദുആ"
+    ],
+    "correctAnswer": 1,
+    "explanation": "അദാൻ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 20,
+    "question": "സകാത്ത് ലഭിക്കേണ്ടവർ?",
+    "options": [
+      "സമ്പന്നർ",
+      "ദരിദ്രർ",
+      "രാജാവ്",
+      "എല്ലാവരും"
+    ],
+    "correctAnswer": 1,
+    "explanation": "അർഹരായ ദരിദ്രർ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 21,
+    "question": "ഇസ്ലാമിന്റെ തൂണുകൾ?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctAnswer": 2,
+    "explanation": "5 തൂണുകൾ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 22,
+    "question": "ജിബ്‌രീൽ (അ) ആരാണ്?",
+    "options": [
+      "പ്രവാചകൻ",
+      "മലക്ക്",
+      "സഹാബി",
+      "രാജാവ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "വഹ്യ് എത്തിച്ച മലക്ക്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 23,
+    "question": "ബദർ യുദ്ധം?",
+    "options": [
+      "1 ഹി.",
+      "2 ഹി.",
+      "3 ഹി.",
+      "4 ഹി."
+    ],
+    "correctAnswer": 1,
+    "explanation": "2 ഹിജ്റ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 24,
+    "question": "ഉഹുദ് യുദ്ധം?",
+    "options": [
+      "2 ഹി.",
+      "3 ഹി.",
+      "4 ഹി.",
+      "5 ഹി."
+    ],
+    "correctAnswer": 1,
+    "explanation": "3 ഹിജ്റ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 25,
+    "question": "ഖുർആൻ എത്ര ജുസ്ഉ?",
+    "options": [
+      "20",
+      "25",
+      "30",
+      "40"
+    ],
+    "correctAnswer": 2,
+    "explanation": "30 ജുസ്ഉ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 26,
+    "question": "ഇഖ്‌ലാസ് സൂറത്തിലെ ആയത്തുകൾ?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctAnswer": 1,
+    "explanation": "4 ആയത്തുകൾ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 27,
+    "question": "ഏറ്റവും നീളം കൂടിയ സൂറത്ത്?",
+    "options": [
+      "യാസീൻ",
+      "ബഖറ",
+      "നിസാഅ്",
+      "ആലുഇംറാൻ"
+    ],
+    "correctAnswer": 1,
+    "explanation": "അൽ-ബഖറ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 28,
+    "question": "ഏറ്റവും ചെറിയ സൂറത്ത്?",
+    "options": [
+      "ഇഖ്‌ലാസ്",
+      "കൗസർ",
+      "ഫലഖ്",
+      "നാസ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "അൽ-കൗസർ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 29,
+    "question": "ഫാത്തിഹയിലെ ആയത്തുകൾ?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctAnswer": 2,
+    "explanation": "7 ആയത്തുകൾ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 30,
+    "question": "ആദ്യ മുസ്ലിം സ്ത്രീ?",
+    "options": [
+      "ആയിശ",
+      "ഖദീജ",
+      "ഫാത്തിമ",
+      "ഹഫ്സ"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ഖദീജ (റ).",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 31,
+    "question": "ആദ്യ മുസ്ലിം പുരുഷൻ?",
+    "options": [
+      "അലി",
+      "അബൂബക്കർ",
+      "ഉമർ",
+      "ഉസ്മാൻ"
+    ],
+    "correctAnswer": 1,
+    "explanation": "അബൂബക്കർ (റ).",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 32,
+    "question": "ആദ്യ മുസ്ലിം ബാലൻ?",
+    "options": [
+      "അലി",
+      "ഹസൻ",
+      "ഹുസൈൻ",
+      "സൈദ്"
+    ],
+    "correctAnswer": 0,
+    "explanation": "അലി (റ).",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 33,
+    "question": "നബി ﷺയുടെ മകൾ?",
+    "options": [
+      "ഫാത്തിമ",
+      "മർയം",
+      "ഹലീമ",
+      "സാറ"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ഫാത്തിമ (റ).",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 34,
+    "question": "ഖുർആനിൽ പേരുള്ള സ്ത്രീ?",
+    "options": [
+      "ആയിശ",
+      "ഖദീജ",
+      "മർയം",
+      "ഫാത്തിമ"
+    ],
+    "correctAnswer": 2,
+    "explanation": "മർയം.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 35,
+    "question": "ഇസ്ലാമിക കലണ്ടർ?",
+    "options": [
+      "സൂര്യൻ",
+      "ചന്ദ്രൻ",
+      "നക്ഷത്രം",
+      "ഭൂമി"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ചന്ദ്ര കലണ്ടർ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 36,
+    "question": "ജുമുഅ ഏത് ദിവസം?",
+    "options": [
+      "വ്യാഴം",
+      "വെള്ളി",
+      "ശനി",
+      "ഞായർ"
+    ],
+    "correctAnswer": 1,
+    "explanation": "വെള്ളി.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 37,
+    "question": "കഅ്ബ ചുറ്റുന്നത്?",
+    "options": [
+      "സഅ്‌യ്",
+      "തവാഫ്",
+      "റമി",
+      "വുകൂഫ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "തവാഫ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 38,
+    "question": "സഫാ-മർവ?",
+    "options": [
+      "തവാഫ്",
+      "സഅ്‌യ്",
+      "റമി",
+      "ഇഹ്റാം"
+    ],
+    "correctAnswer": 1,
+    "explanation": "സഅ്‌യ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 39,
+    "question": "അറഫയിൽ നിൽക്കൽ?",
+    "options": [
+      "റമി",
+      "വുകൂഫ്",
+      "സഅ്‌യ്",
+      "തവാഫ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "വുകൂഫ്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 40,
+    "question": "ഈദുൽ അദ്ഹയിലെ കർമ്മം?",
+    "options": [
+      "സകാത്ത്",
+      "ഖുർബാനി",
+      "നോമ്പ്",
+      "ഹജ്ജ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ഖുർബാനി.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 41,
+    "question": "ഖുർആന്റെ ഭാഷ?",
+    "options": [
+      "ഉർദു",
+      "അറബി",
+      "പേർഷ്യൻ",
+      "തുർക്കിഷ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "അറബി.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 42,
+    "question": "അല്ലാഹുവിന്റെ ഭവനം?",
+    "options": [
+      "മസ്ജിദുന്നബവി",
+      "കഅ്ബ",
+      "അഖ്സ",
+      "ഹിറ"
+    ],
+    "correctAnswer": 1,
+    "explanation": "കഅ്ബ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 43,
+    "question": "സഹാബി ആര്?",
+    "options": [
+      "മലക്ക്",
+      "പ്രവാചകൻ",
+      "നബിയെ കണ്ട വിശ്വാസി",
+      "ഇമാം"
+    ],
+    "correctAnswer": 2,
+    "explanation": "നബിയെ കണ്ട വിശ്വാസി.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 44,
+    "question": "വിശുദ്ധ രാത്രി?",
+    "options": [
+      "ലൈലത്തുൽ ഖദർ",
+      "ശബെ ബറാഅത്ത്",
+      "മിഅ്റാജ്",
+      "ആശൂറ"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ലൈലത്തുൽ ഖദർ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 45,
+    "question": "സൂറത്തുൽ ഫലഖ് ഏത് ജുസ്ഉ?",
+    "options": [
+      "28",
+      "29",
+      "30",
+      "27"
+    ],
+    "correctAnswer": 2,
+    "explanation": "30-ാം ജുസ്ഉ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 46,
+    "question": "അല്ലാഹുവിന്റെ മനോഹര നാമങ്ങൾ?",
+    "options": [
+      "90",
+      "95",
+      "99",
+      "100"
+    ],
+    "correctAnswer": 2,
+    "explanation": "99.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 47,
+    "question": "നമസ്കാരം തുടങ്ങുമ്പോൾ?",
+    "options": [
+      "സലാം",
+      "തക്ബീർ",
+      "തഷഹ്ഹുദ്",
+      "ദുആ"
+    ],
+    "correctAnswer": 1,
+    "explanation": "തക്ബീർ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 48,
+    "question": "ഇസ്ലാമിന്റെ ഒന്നാം തൂൺ?",
+    "options": [
+      "സകാത്ത്",
+      "നമസ്കാരം",
+      "ശഹാദത്ത്",
+      "ഹജ്ജ്"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ശഹാദത്ത്.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  },
+  {
+    "id": 49,
+    "question": "നോമ്പ് നിർബന്ധമായ മാസം?",
+    "options": [
+      "ശഅബാൻ",
+      "റമദാൻ",
+      "മുഹറം",
+      "റജബ്"
+    ],
+    "correctAnswer": 1,
+    "explanation": "റമദാൻ.",
+    "category": "Islamic",
+    "difficulty": "Easy",
+    "language": "Malayalam"
+  }
+]
