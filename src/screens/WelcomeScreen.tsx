@@ -70,6 +70,15 @@ const WelcomeScreen: React.FC = () => {
                 <div className="w-2.5 h-2.5 bg-secondary rounded-full"></div>
               </div>
               <div className="flex flex-col">
+                <span className="text-slate-700 font-medium">Unique Mobile Number: A mobile number can only be used by one student.</span>
+                <span className="text-slate-500 text-sm mt-0.5 font-malayalam">ഒരു നമ്പറിൽ ഒരാൾക്ക് മാത്രം: ഒരു മൊബൈൽ നമ്പർ ഉപയോഗിച്ച് ഒരാൾക്ക് മാത്രമേ രജിസ്റ്റർ ചെയ്യാൻ സാധിക്കുകയുള്ളൂ.</span>
+              </div>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 mt-1">
+                <div className="w-2.5 h-2.5 bg-secondary rounded-full"></div>
+              </div>
+              <div className="flex flex-col">
                 <span className="text-slate-700 font-medium">Internet Required: Ensure you have a stable connection.</span>
                 <span className="text-slate-500 text-sm mt-0.5 font-malayalam">ഇന്റർനെറ്റ്: നല്ല ഇന്റർനെറ്റ് കണക്ഷൻ ഉണ്ടെന്ന് ഉറപ്പുവരുത്തുക.</span>
               </div>
