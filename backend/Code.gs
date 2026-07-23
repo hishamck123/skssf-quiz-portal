@@ -59,7 +59,8 @@ function doPost(e) {
     var data = JSON.parse(e.postData.contents);
     
     var name = data.name || "";
-    var registerNumber = data.registerNumber || "";
+    var fatherName = data.fatherName || "";
+    var place = data.place || "";
     var referenceNumber = data.referenceNumber || "";
     var phone = data.phone || "";
     var email = data.email || "";
@@ -86,8 +87,8 @@ function doPost(e) {
     }
 
     // Build row data
-    // Assuming columns: Timestamp, Reference Number, Register Number, Name, Phone, Email, Score, q1, q2, ..., q49
-    var rowData = [submittedAt, referenceNumber, registerNumber, name, phone, email, score];
+    // Assuming columns: Timestamp, Reference Number, Full Name, Father Name, Place, Phone, Email, Score, q1, q2, ..., q49
+    var rowData = [submittedAt, referenceNumber, name, fatherName, place, phone, email, score];
     
     // Since questions are randomized (30 out of 49), we MUST output them in a fixed order 
     // so the columns align correctly in the Google Sheet for every student.
@@ -97,13 +98,12 @@ function doPost(e) {
       rowData.push(answers[key] || "");
     }
     
-    // Optional: Prevent duplicate submissions based on Register Number
+    // Optional: Prevent duplicate submissions based on Phone Number (since Register Number is gone)
     var dataRange = sheet.getDataRange().getValues();
     for (var j = 1; j < dataRange.length; j++) { // Skip header row
-      // Register Number is now at index 2 (Column C) in rowData, but it depends on sheet structure.
-      // Assuming Sheet matches rowData: 0=Timestamp, 1=Ref, 2=RegNum
-      if (dataRange[j][2] == registerNumber) {
-        return ContentService.createTextOutput(JSON.stringify({"status": "error", "message": "Duplicate Register Number"}))
+      // Phone is now at index 5 (Column F) in rowData
+      if (dataRange[j][5] == phone && phone.length > 0) {
+        return ContentService.createTextOutput(JSON.stringify({"status": "error", "message": "Duplicate Phone Number"}))
                              .setMimeType(ContentService.MimeType.JSON);
       }
     }

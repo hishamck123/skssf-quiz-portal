@@ -4,7 +4,8 @@ import type { Question } from '../utils/questions';
 
 export interface StudentDetails {
   name: string;
-  registerNumber: string;
+  fatherName: string;
+  place: string;
   phone: string;
   email: string;
 }
@@ -84,7 +85,8 @@ export const useQuizStore = create<QuizState>()(
           const payload = {
             referenceNumber: refNumber,
             name: state.studentDetails?.name || 'Unknown',
-            registerNumber: state.studentDetails?.registerNumber || 'Unknown',
+            fatherName: state.studentDetails?.fatherName || 'Unknown',
+            place: state.studentDetails?.place || 'Unknown',
             phone: state.studentDetails?.phone || '',
             email: state.studentDetails?.email || '',
             answers: state.answers,

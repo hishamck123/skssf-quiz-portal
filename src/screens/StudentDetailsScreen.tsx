@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useQuizStore, type StudentDetails } from '../store/quizStore';
 import { quizQuestions } from '../utils/questions';
-import { User, Hash, Phone, Mail } from 'lucide-react';
+import { User, Phone, Mail, MapPin } from 'lucide-react';
 
 const StudentDetailsScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -11,7 +11,8 @@ const StudentDetailsScreen: React.FC = () => {
 
   const [formData, setFormData] = useState<StudentDetails>({
     name: studentDetails?.name || '',
-    registerNumber: studentDetails?.registerNumber || '',
+    fatherName: studentDetails?.fatherName || '',
+    place: studentDetails?.place || '',
     phone: studentDetails?.phone || '',
     email: studentDetails?.email || '',
   });
@@ -20,8 +21,15 @@ const StudentDetailsScreen: React.FC = () => {
 
   const validate = () => {
     const newErrors: Partial<Record<keyof StudentDetails, string>> = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.registerNumber.trim()) newErrors.registerNumber = 'Register Number is required';
+    if (!formData.name.trim()) newErrors.name = 'Full Name is required';
+    if (!formData.fatherName.trim()) newErrors.fatherName = 'Father Name is required';
+    if (!formData.place.trim()) newErrors.place = 'Place is required';
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Mobile Number is required';
+    } else if (!/^\d{10}$/.test(formData.phone.trim())) {
+      newErrors.phone = 'Mobile Number must be exactly 10 digits';
+    }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -38,7 +46,7 @@ const StudentDetailsScreen: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 sm:p-8 relative">
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 sm:p-8 relative py-12">
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -72,26 +80,45 @@ const StudentDetailsScreen: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">
-              Register Number <span className="text-danger">*</span>
+              Father's Name <span className="text-danger">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Hash className="h-5 w-5 text-slate-400" />
+                <User className="h-5 w-5 text-slate-400" />
               </div>
               <input
                 type="text"
-                value={formData.registerNumber}
-                onChange={(e) => setFormData({ ...formData, registerNumber: e.target.value })}
-                className={`input-field pl-10 ${errors.registerNumber ? 'border-danger focus:border-danger focus:ring-danger/20' : ''}`}
-                placeholder="Enter your register number"
+                value={formData.fatherName}
+                onChange={(e) => setFormData({ ...formData, fatherName: e.target.value })}
+                className={`input-field pl-10 ${errors.fatherName ? 'border-danger focus:border-danger focus:ring-danger/20' : ''}`}
+                placeholder="Enter your father's name"
               />
             </div>
-            {errors.registerNumber && <p className="text-danger text-sm mt-1">{errors.registerNumber}</p>}
+            {errors.fatherName && <p className="text-danger text-sm mt-1">{errors.fatherName}</p>}
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Place <span className="text-danger">*</span>
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <MapPin className="h-5 w-5 text-slate-400" />
+              </div>
+              <input
+                type="text"
+                value={formData.place}
+                onChange={(e) => setFormData({ ...formData, place: e.target.value })}
+                className={`input-field pl-10 ${errors.place ? 'border-danger focus:border-danger focus:ring-danger/20' : ''}`}
+                placeholder="Enter your place/city"
+              />
+            </div>
+            {errors.place && <p className="text-danger text-sm mt-1">{errors.place}</p>}
           </div>
 
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">
-              Phone Number <span className="text-slate-400 text-xs font-normal">(Optional)</span>
+              Mobile Number <span className="text-danger">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -100,11 +127,12 @@ const StudentDetailsScreen: React.FC = () => {
               <input
                 type="tel"
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="input-field pl-10"
-                placeholder="Enter your phone number"
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '').slice(0, 10) })}
+                className={`input-field pl-10 ${errors.phone ? 'border-danger focus:border-danger focus:ring-danger/20' : ''}`}
+                placeholder="10-digit mobile number"
               />
             </div>
+            {errors.phone && <p className="text-danger text-sm mt-1">{errors.phone}</p>}
           </div>
 
           <div>

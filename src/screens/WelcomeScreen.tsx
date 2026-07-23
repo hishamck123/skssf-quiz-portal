@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, Clock, AlertCircle, ShieldAlert } from 'lucide-react';
+import { useQuizStore } from '../store/quizStore';
 
 const WelcomeScreen: React.FC = () => {
   const [agreed, setAgreed] = useState(false);
   const navigate = useNavigate();
+  const resetQuiz = useQuizStore((state) => state.resetQuiz);
+
+  // Reset any previous quiz attempts when landing on the welcome screen
+  useEffect(() => {
+    resetQuiz();
+  }, [resetQuiz]);
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 sm:p-8 relative">
