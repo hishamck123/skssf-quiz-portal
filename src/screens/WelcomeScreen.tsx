@@ -43,30 +43,52 @@ const WelcomeScreen: React.FC = () => {
             Instructions
           </h3>
           
-          <ul className="space-y-4">
+          <ul className="space-y-5">
             <li className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-              <span className="text-slate-700"><strong>Duration:</strong> 15 Minutes. The timer will start automatically.</span>
+              <Clock className="w-5 h-5 text-secondary shrink-0 mt-1" />
+              <div className="flex flex-col">
+                <span className="text-slate-700 font-medium">Duration: 15 Minutes. The timer will start automatically.</span>
+                <span className="text-slate-500 text-sm mt-0.5 font-malayalam">സമയം: 15 മിനിറ്റ്. ടൈമർ യാന്ത്രികമായി ആരംഭിക്കുന്നതാണ്.</span>
+              </div>
             </li>
             <li className="flex items-start gap-3">
-              <BookOpen className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-              <span className="text-slate-700"><strong>Format:</strong> Multiple Choice Questions.</span>
+              <BookOpen className="w-5 h-5 text-secondary shrink-0 mt-1" />
+              <div className="flex flex-col">
+                <span className="text-slate-700 font-medium">Format: Multiple Choice Questions.</span>
+                <span className="text-slate-500 text-sm mt-0.5 font-malayalam">ഫോർമാറ്റ്: മൾട്ടിപ്പിൾ ചോയ്‌സ് ചോദ്യങ്ങൾ.</span>
+              </div>
             </li>
             <li className="flex items-start gap-3">
-              <ShieldAlert className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-              <span className="text-slate-700"><strong>One Attempt Only:</strong> Do not refresh or close the tab during the quiz.</span>
+              <ShieldAlert className="w-5 h-5 text-secondary shrink-0 mt-1" />
+              <div className="flex flex-col">
+                <span className="text-slate-700 font-medium">One Attempt Only: Do not refresh or close the tab during the quiz.</span>
+                <span className="text-slate-500 text-sm mt-0.5 font-malayalam">ഒറ്റത്തവണ മാത്രം: ക്വിസ് നടക്കുന്നതിനിടയിൽ പേജ് റിഫ്രഷ് ചെയ്യുകയോ ക്ലോസ് ചെയ്യുകയോ ചെയ്യരുത്.</span>
+              </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 mt-1">
                 <div className="w-2.5 h-2.5 bg-secondary rounded-full"></div>
               </div>
-              <span className="text-slate-700"><strong>Internet Required:</strong> Ensure you have a stable connection.</span>
+              <div className="flex flex-col">
+                <span className="text-slate-700 font-medium">Internet Required: Ensure you have a stable connection.</span>
+                <span className="text-slate-500 text-sm mt-0.5 font-malayalam">ഇന്റർനെറ്റ്: നല്ല ഇന്റർനെറ്റ് കണക്ഷൻ ഉണ്ടെന്ന് ഉറപ്പുവരുത്തുക.</span>
+              </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full border-2 border-warning flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-5 h-5 rounded-full border-2 border-warning flex items-center justify-center shrink-0 mt-1">
                 <div className="w-2.5 h-2.5 bg-warning rounded-full"></div>
               </div>
-              <span className="text-slate-700"><strong>Auto Submit:</strong> The quiz will automatically submit when the time ends.</span>
+              <div className="flex flex-col">
+                <span className="text-slate-700 font-medium">Auto Submit: The quiz will automatically submit when the time ends.</span>
+                <span className="text-slate-500 text-sm mt-0.5 font-malayalam">ഓട്ടോ സബ്മിറ്റ്: സമയം അവസാനിക്കുമ്പോൾ ക്വിസ് യാന്ത്രികമായി സബ്മിറ്റ് ആകുന്നതാണ്.</span>
+              </div>
+            </li>
+            <li className="flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-danger shrink-0 mt-1" />
+              <div className="flex flex-col">
+                <span className="text-slate-700 font-medium">Save Reference Number: Please take a screenshot of the reference number shown at the end.</span>
+                <span className="text-slate-500 text-sm mt-0.5 font-malayalam">റഫറൻസ് നമ്പർ: ക്വിസ് അവസാനിക്കുമ്പോൾ ലഭിക്കുന്ന റഫറൻസ് നമ്പറിന്റെ സ്ക്രീൻഷോട്ട് എടുത്തു സൂക്ഷിക്കേണ്ടതാണ്.</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -93,9 +115,14 @@ const WelcomeScreen: React.FC = () => {
               </motion.svg>
             </div>
           </div>
-          <span className="text-slate-700 font-medium group-hover:text-slate-900 transition-colors">
-            I have read and understood the instructions.
-          </span>
+          <div className="flex flex-col mt-0.5">
+            <span className="text-slate-700 font-medium group-hover:text-slate-900 transition-colors">
+              I have read and understood the instructions.
+            </span>
+            <span className="text-slate-500 text-sm font-malayalam mt-0.5">
+              ഞാൻ നിർദ്ദേശങ്ങൾ വായിച്ചു മനസ്സിലാക്കി.
+            </span>
+          </div>
         </label>
 
         <motion.button
