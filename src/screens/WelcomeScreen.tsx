@@ -38,10 +38,16 @@ const WelcomeScreen: React.FC = () => {
         </div>
 
         <div className="bg-white/60 rounded-xl p-6 mb-8 border border-white/50">
-          <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
-            <AlertCircle className="w-5 h-5 text-primary" />
-            Instructions
-          </h3>
+          <div className="mb-6">
+            <h3 className="font-semibold text-slate-800 flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 text-primary" />
+              Instructions
+            </h3>
+            <div className="mt-1 flex flex-col pl-7">
+              <p className="text-sm text-slate-600 font-medium">Read carefully and understand before proceeding.</p>
+              <p className="text-xs text-slate-500 font-malayalam mt-0.5">തുടരുന്നതിന് മുൻപ് താഴെ പറയുന്നവ ശ്രദ്ധാപൂർവ്വം വായിച്ചു മനസ്സിലാക്കുക.</p>
+            </div>
+          </div>
           
           <ul className="space-y-5">
             <li className="flex items-start gap-3">
