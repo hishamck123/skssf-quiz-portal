@@ -82,6 +82,17 @@ export const useQuizStore = create<QuizState>()(
         
         try {
           // Prepare payload for Google Apps Script
+          const now = new Date();
+          const formattedDate = now.toLocaleString('en-IN', { 
+            timeZone: 'Asia/Kolkata',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+          });
+
           const payload = {
             referenceNumber: refNumber,
             name: state.studentDetails?.name || 'Unknown',
@@ -90,7 +101,7 @@ export const useQuizStore = create<QuizState>()(
             phone: state.studentDetails?.phone || '',
             email: state.studentDetails?.email || '',
             answers: state.answers,
-            submittedAt: new Date().toISOString()
+            submittedAt: formattedDate
           };
 
           console.log("Submitting payload:", payload);
