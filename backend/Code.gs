@@ -64,7 +64,10 @@ function doPost(e) {
     var referenceNumber = data.referenceNumber || "";
     var phone = data.phone || "";
     var email = data.email || "";
-    var submittedAt = data.submittedAt || new Date().toISOString();
+    
+    // Force the timestamp to Indian Standard Time (IST) securely on the backend
+    var submittedAt = Utilities.formatDate(new Date(), "GMT+05:30", "dd MMM yyyy, hh:mm a");
+    
     var answers = data.answers || {};
     
     // Calculate Score
