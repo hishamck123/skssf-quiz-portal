@@ -51,8 +51,8 @@ export const useQuizStore = create<QuizState>()(
       },
 
       setStudentDetails: (details) => set({ studentDetails: details }),
-      
-      setAnswer: (questionId, answer) => 
+
+      setAnswer: (questionId, answer) =>
         set((state) => ({
           answers: {
             ...state.answers,
@@ -62,7 +62,7 @@ export const useQuizStore = create<QuizState>()(
 
       setStatus: (status) => set({ status }),
 
-      decrementTime: () => 
+      decrementTime: () =>
         set((state) => {
           if (state.timeRemaining <= 1) {
             // Auto submit happens externally to handle async, but we cap it at 0 here
@@ -76,14 +76,14 @@ export const useQuizStore = create<QuizState>()(
       submitQuiz: async () => {
         const state = get();
         if (state.status === 'submitted') return true;
-        
+
         // Generate a 5-digit reference number
         const refNumber = Math.floor(10000 + Math.random() * 90000).toString();
-        
+
         try {
           // Prepare payload for Google Apps Script
           const now = new Date();
-          const formattedDate = now.toLocaleString('en-IN', { 
+          const formattedDate = now.toLocaleString('en-IN', {
             timeZone: 'Asia/Kolkata',
             day: '2-digit',
             month: 'short',
@@ -107,9 +107,9 @@ export const useQuizStore = create<QuizState>()(
           console.log("Submitting payload:", payload);
           // In a real app, you would fetch to the GAS Web App URL here.
           // For now, we simulate a network delay.
-          
+
           const WEB_APP_URL = import.meta.env.VITE_GAS_URL;
-          
+
           if (WEB_APP_URL) {
             await fetch(WEB_APP_URL, {
               method: 'POST',
@@ -121,7 +121,7 @@ export const useQuizStore = create<QuizState>()(
             });
             // no-cors mode doesn't allow reading the response, so we just assume success if it didn't throw an error.
           } else {
-             // Simulate network request for testing
+            // Simulate network request for testing
             await new Promise(resolve => setTimeout(resolve, 1500));
           }
 
@@ -145,10 +145,10 @@ export const useQuizStore = create<QuizState>()(
     }),
     {
       name: 'skssf-quiz-storage',
-      partialize: (state) => ({ 
-        studentDetails: state.studentDetails, 
+      partialize: (state) => ({
+        studentDetails: state.studentDetails,
         activeQuestions: state.activeQuestions,
-        answers: state.answers, 
+        answers: state.answers,
         status: state.status,
         timeRemaining: state.timeRemaining,
         currentQuestionIndex: state.currentQuestionIndex,

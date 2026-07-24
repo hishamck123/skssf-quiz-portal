@@ -122,7 +122,27 @@ function doPost(e) {
   }
 }
 
-// Optional: Provide a doGet to easily check if the script is running
+// Optional: Provide a doGet to easily check if the script is running, or verify duplicte phone number
 function doGet(e) {
+  var action = e.parameter.action;
+  
+  if (action === 'checkPhone') {
+    var phone = e.parameter.phone;
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var dataRange = sheet.getDataRange().getValues();
+    
+    // Column index for phone number is 5 (Column F)
+    var exists = false;
+    for (var j = 1; j < dataRange.length; j++) {
+      if (dataRange[j][5] == phone && phone.length > 0) {
+        exists = true;
+        break;
+      }
+    }
+    
+    return ContentService.createTextOutput(JSON.stringify({"exists": exists}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
   return ContentService.createTextOutput("SKSSF Muttipadi Quiz Backend is Running.");
 }

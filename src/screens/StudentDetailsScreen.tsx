@@ -8,6 +8,7 @@ import { User, Phone, Mail, MapPin } from 'lucide-react';
 const StudentDetailsScreen: React.FC = () => {
   const navigate = useNavigate();
   const { setStudentDetails, studentDetails, initializeQuiz } = useQuizStore();
+  const [isCheckingPhone, setIsCheckingPhone] = useState(false);
 
   const [formData, setFormData] = useState<StudentDetails>({
     name: studentDetails?.name || '',
@@ -24,20 +25,39 @@ const StudentDetailsScreen: React.FC = () => {
     if (!formData.name.trim()) newErrors.name = 'Full Name is required';
     if (!formData.fatherName.trim()) newErrors.fatherName = 'Father Name is required';
     if (!formData.place.trim()) newErrors.place = 'Place is required';
-    
+
     if (!formData.phone.trim()) {
       newErrors.phone = 'Mobile Number is required';
     } else if (!/^\d{10}$/.test(formData.phone.trim())) {
       newErrors.phone = 'Mobile Number must be exactly 10 digits';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
+      setIsCheckingPhone(true);
+      const WEB_APP_URL = import.meta.env.VITE_GAS_URL;
+
+      try {
+        if (WEB_APP_URL) {
+          const response = await fetch(`${WEB_APP_URL}?action=checkPhone&phone=${formData.phone}`);
+          const data = await response.json();
+
+          if (data.exists) {
+            setErrors(prev => ({ ...prev, phone: 'Already tried on this number' }));
+            setIsCheckingPhone(false);
+            return;
+          }
+        }
+      } catch (error) {
+        console.error("Error checking phone number:", error);
+      }
+
+      setIsCheckingPhone(false);
       setStudentDetails(formData);
       // Initialize quiz with 30 randomized questions from the bank
       initializeQuiz(quizQuestions, 30);
@@ -47,7 +67,7 @@ const StudentDetailsScreen: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 sm:p-8 relative py-12">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -96,7 +116,7 @@ const StudentDetailsScreen: React.FC = () => {
             </div>
             {errors.fatherName && <p className="text-danger text-sm mt-1">{errors.fatherName}</p>}
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">
               Place <span className="text-danger">*</span>
@@ -158,9 +178,10 @@ const StudentDetailsScreen: React.FC = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full btn-primary text-lg"
+              disabled={isCheckingPhone}
+              className={`w-full btn-primary text-lg ${isCheckingPhone ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              Start Quiz
+              {isCheckingPhone ? 'Checking...' : 'Start Quiz'}
             </motion.button>
           </div>
         </form>
