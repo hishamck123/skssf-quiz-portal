@@ -45,7 +45,16 @@ const StudentDetailsScreen: React.FC = () => {
       try {
         if (WEB_APP_URL) {
           const response = await fetch(`${WEB_APP_URL}?action=checkPhone&phone=${formData.phone}`);
-          const data = await response.json();
+          const text = await response.text();
+
+          let data;
+          try {
+            data = JSON.parse(text);
+          } catch (e) {
+            alert("Backend Error: Please ensure you deployed the Google Apps Script as a 'New version'. The script returned plain text instead of JSON.");
+            setIsCheckingPhone(false);
+            return;
+          }
 
           if (data.exists) {
             setErrors(prev => ({ ...prev, phone: 'Already tried on this number' }));
@@ -55,6 +64,9 @@ const StudentDetailsScreen: React.FC = () => {
         }
       } catch (error) {
         console.error("Error checking phone number:", error);
+        alert("Network error: Could not verify if the phone number exists.");
+        setIsCheckingPhone(false);
+        return;
       }
 
       setIsCheckingPhone(false);
