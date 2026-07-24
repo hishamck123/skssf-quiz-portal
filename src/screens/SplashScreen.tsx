@@ -47,7 +47,7 @@ const SplashScreen: React.FC = () => {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="text-white text-3xl md:text-4xl font-bold font-poppins text-center px-4 tracking-wide"
         >
-          Muttipadi Online Quiz
+          Muttippadi Online Quiz
         </motion.h1>
         
         <motion.p 

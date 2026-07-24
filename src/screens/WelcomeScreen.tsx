@@ -32,7 +32,7 @@ const WelcomeScreen: React.FC = () => {
             Welcome to
           </h1>
           <h2 className="text-xl sm:text-2xl font-semibold text-primary text-center mt-1 font-poppins">
-            SKSSF Muttipadi Online Quiz
+            SKSSF Muttippadi Online Quiz
           </h2>
         </div>
 
