@@ -5,6 +5,7 @@ import SplashScreen from './screens/SplashScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import StudentDetailsScreen from './screens/StudentDetailsScreen';
 import QuizScreen from './screens/QuizScreen';
+import SecondInstructionsScreen from './screens/SecondInstructionsScreen';
 import SubmissionScreen from './screens/SubmissionScreen';
 
 // Page Transition Wrapper
@@ -30,6 +31,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><SplashScreen /></PageWrapper>} />
         <Route path="/welcome" element={<PageWrapper><WelcomeScreen /></PageWrapper>} />
+        <Route path="/instructions-2" element={<PageWrapper><SecondInstructionsScreen /></PageWrapper>} />
         <Route path="/details" element={<PageWrapper><StudentDetailsScreen /></PageWrapper>} />
         <Route path="/quiz" element={<PageWrapper><QuizScreen /></PageWrapper>} />
         <Route path="/submission" element={<PageWrapper><SubmissionScreen /></PageWrapper>} />

@@ -4,7 +4,7 @@ const payload = {
     referenceNumber: "12345",
     name: "Test User",
     fatherName: "Test Father",
-    place: "Test Place",
+    familyName: "Test Place",
     phone: "11" + Date.now().toString().slice(-8), // random 10-digit number
     email: "test@example.com",
     answers: { "q1": "a" },

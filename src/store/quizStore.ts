@@ -5,7 +5,7 @@ import type { Question } from '../utils/questions';
 export interface StudentDetails {
   name: string;
   fatherName: string;
-  place: string;
+  familyName: string;
   phone: string;
   email: string;
 }
@@ -97,7 +97,7 @@ export const useQuizStore = create<QuizState>()(
             referenceNumber: refNumber,
             name: state.studentDetails?.name || 'Unknown',
             fatherName: state.studentDetails?.fatherName || 'Unknown',
-            place: state.studentDetails?.place || 'Unknown',
+            familyName: state.studentDetails?.familyName || 'Unknown',
             phone: state.studentDetails?.phone || '',
             email: state.studentDetails?.email || '',
             answers: state.answers,

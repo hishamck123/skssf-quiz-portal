@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useQuizStore, type StudentDetails } from '../store/quizStore';
 import { quizQuestions } from '../utils/questions';
-import { User, Phone, Mail, MapPin } from 'lucide-react';
+import { User, Phone, Mail, Home } from 'lucide-react';
 
 const StudentDetailsScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const StudentDetailsScreen: React.FC = () => {
   const [formData, setFormData] = useState<StudentDetails>({
     name: studentDetails?.name || '',
     fatherName: studentDetails?.fatherName || '',
-    place: studentDetails?.place || '',
+    familyName: studentDetails?.familyName || '',
     phone: studentDetails?.phone || '',
     email: studentDetails?.email || '',
   });
@@ -24,7 +24,7 @@ const StudentDetailsScreen: React.FC = () => {
     const newErrors: Partial<Record<keyof StudentDetails, string>> = {};
     if (!formData.name.trim()) newErrors.name = 'Full Name is required';
     if (!formData.fatherName.trim()) newErrors.fatherName = 'Father Name is required';
-    if (!formData.place.trim()) newErrors.place = 'Place is required';
+    if (!formData.familyName.trim()) newErrors.familyName = 'Family Name / House Name is required';
 
     if (!formData.phone.trim()) {
       newErrors.phone = 'Mobile Number is required';
@@ -131,21 +131,21 @@ const StudentDetailsScreen: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">
-              Place <span className="text-danger">*</span>
+              Family Name / House Name <span className="text-danger">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <MapPin className="h-5 w-5 text-slate-400" />
+                <Home className="h-5 w-5 text-slate-400" />
               </div>
               <input
                 type="text"
-                value={formData.place}
-                onChange={(e) => setFormData({ ...formData, place: e.target.value })}
-                className={`input-field pl-10 ${errors.place ? 'border-danger focus:border-danger focus:ring-danger/20' : ''}`}
-                placeholder="Enter your place/city"
+                value={formData.familyName}
+                onChange={(e) => setFormData({ ...formData, familyName: e.target.value })}
+                className={`input-field pl-10 ${errors.familyName ? 'border-danger focus:border-danger focus:ring-danger/20' : ''}`}
+                placeholder="Enter your family name or house name"
               />
             </div>
-            {errors.place && <p className="text-danger text-sm mt-1">{errors.place}</p>}
+            {errors.familyName && <p className="text-danger text-sm mt-1">{errors.familyName}</p>}
           </div>
 
           <div>

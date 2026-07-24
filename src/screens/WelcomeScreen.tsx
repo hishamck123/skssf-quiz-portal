@@ -5,7 +5,6 @@ import { BookOpen, Clock, AlertCircle, ShieldAlert } from 'lucide-react';
 import { useQuizStore } from '../store/quizStore';
 
 const WelcomeScreen: React.FC = () => {
-  const [agreed, setAgreed] = useState(false);
   const navigate = useNavigate();
   const resetQuiz = useQuizStore((state) => state.resetQuiz);
 
@@ -108,46 +107,13 @@ const WelcomeScreen: React.FC = () => {
           </ul>
         </div>
 
-        <label className="flex items-start gap-3 cursor-pointer mb-8 group">
-          <div className="relative flex items-center justify-center mt-1 shrink-0">
-            <input 
-              type="checkbox" 
-              className="peer sr-only"
-              checked={agreed}
-              onChange={(e) => setAgreed(e.target.checked)}
-            />
-            <div className="w-6 h-6 border-2 border-slate-300 rounded-md peer-checked:bg-primary peer-checked:border-primary transition-all duration-200 flex items-center justify-center">
-              <motion.svg 
-                initial={{ scale: 0 }}
-                animate={{ scale: agreed ? 1 : 0 }}
-                className="w-4 h-4 text-white" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor" 
-                strokeWidth="3"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </motion.svg>
-            </div>
-          </div>
-          <div className="flex flex-col mt-0.5">
-            <span className="text-slate-700 font-medium group-hover:text-slate-900 transition-colors">
-              I have read and understood the instructions.
-            </span>
-            <span className="text-slate-500 text-sm font-malayalam mt-0.5">
-              ഞാൻ നിർദ്ദേശങ്ങൾ വായിച്ചു മനസ്സിലാക്കി.
-            </span>
-          </div>
-        </label>
-
         <motion.button
-          whileHover={{ scale: agreed ? 1.02 : 1 }}
-          whileTap={{ scale: agreed ? 0.98 : 1 }}
-          onClick={() => agreed && navigate('/details')}
-          disabled={!agreed}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={() => navigate('/instructions-2')}
           className="w-full btn-primary text-lg"
         >
-          Proceed
+          Next
         </motion.button>
       </motion.div>
     </div>

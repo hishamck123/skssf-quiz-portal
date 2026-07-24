@@ -60,7 +60,7 @@ function doPost(e) {
     
     var name = data.name || "";
     var fatherName = data.fatherName || "";
-    var place = data.place || "";
+    var familyName = data.familyName || "";
     var referenceNumber = data.referenceNumber || "";
     var phone = data.phone || "";
     var email = data.email || "";
@@ -90,15 +90,25 @@ function doPost(e) {
     }
 
     // Build row data
-    // Assuming columns: Timestamp, Reference Number, Full Name, Father Name, Place, Phone, Email, Score, q1, q2, ..., q49
-    var rowData = [submittedAt, referenceNumber, name, fatherName, place, phone, email, score];
+    // Assuming columns: Timestamp, Reference Number, Full Name, Father Name, Family Name, Phone, Email, Score, q1, q2, ..., q49
+    var rowData = [submittedAt, referenceNumber, name, fatherName, familyName, phone, email, score];
     
     // Since questions are randomized (30 out of 49), we MUST output them in a fixed order 
     // so the columns align correctly in the Google Sheet for every student.
     // We will iterate from 1 to 49. If a student didn't get a question, the cell will be blank.
     for (var i = 1; i <= 49; i++) {
       var key = "q" + i;
-      rowData.push(answers[key] || "");
+      var studentAnswer = answers[key] || "";
+      var cellValue = "";
+      
+      if (studentAnswer !== "") {
+        if (CORRECT_ANSWERS[key] && studentAnswer === CORRECT_ANSWERS[key]) {
+          cellValue = studentAnswer + " (Right)";
+        } else {
+          cellValue = studentAnswer + " (Wrong)";
+        }
+      }
+      rowData.push(cellValue);
     }
     
     // Optional: Prevent duplicate submissions based on Phone Number (since Register Number is gone)
