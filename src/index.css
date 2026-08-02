@@ -3,34 +3,30 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-background text-slate-800 font-inter antialiased min-h-screen selection:bg-primary selection:text-white;
-  }
-  
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins;
+    @apply font-poppins font-semibold;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-glass rounded-2xl;
+    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-xl rounded-[24px];
   }
   
   .glass-panel {
-    @apply bg-white/40 backdrop-blur-lg border border-white/30 shadow-glass;
+    @apply bg-white/40 backdrop-blur-lg border border-white/30 shadow-lg;
   }
 
   .btn-primary {
-    @apply bg-primary hover:bg-primary-light text-white font-semibold py-3 px-6 rounded-xl shadow-soft transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-brand-green hover:bg-emerald-600 text-white font-semibold py-4 px-6 rounded-[24px] shadow-lg transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed text-lg;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-slate-50 text-slate-700 font-semibold py-3 px-6 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-white hover:bg-slate-50 text-slate-700 font-semibold py-4 px-6 rounded-[24px] border border-slate-200 shadow-sm transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed text-lg;
   }
   
   .input-field {
-    @apply w-full bg-white/50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300;
+    @apply w-full bg-white/80 border border-slate-200 rounded-xl px-4 py-4 focus:outline-none focus:ring-2 focus:ring-brand-green/50 focus:border-brand-green transition-all duration-300 text-[16px];
   }
 }
 

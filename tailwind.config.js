@@ -6,19 +6,27 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: {
-          DEFAULT: '#0F766E', // Primary
-          light: '#14B8A6', // Secondary
-        },
-        accent: '#22C55E',
-        warning: '#F59E0B',
-        danger: '#EF4444',
-        background: '#F8FAFC',
-      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        brand: {
+          green: '#0F8A5F', // Primary Green
+          gold: '#D4AF37',  // Accent Gold
+          light: '#F8FAFC',
+          dark: '#0F172A',
+        },
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        }
       },
       borderRadius: {
         'xl': '20px',

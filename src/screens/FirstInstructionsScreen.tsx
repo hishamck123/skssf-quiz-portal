@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { BookOpen, Clock, AlertCircle, ShieldAlert } from 'lucide-react';
 import { useQuizStore } from '../store/quizStore';
 
-const WelcomeScreen: React.FC = () => {
+const FirstInstructionsScreen: React.FC = () => {
   const navigate = useNavigate();
   const resetQuiz = useQuizStore((state) => state.resetQuiz);
 
@@ -14,9 +14,9 @@ const WelcomeScreen: React.FC = () => {
   }, [resetQuiz]);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 sm:p-8 relative">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary-light rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob animation-delay-2000"></div>
+    <div className="min-h-[100dvh] w-full bg-background flex flex-col items-center py-12 px-4 sm:px-8 relative overflow-y-auto">
+      <div className="fixed top-0 right-0 w-64 h-64 bg-primary-light rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob"></div>
+      <div className="fixed bottom-0 left-0 w-64 h-64 bg-accent rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob animation-delay-2000"></div>
 
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
@@ -31,9 +31,10 @@ const WelcomeScreen: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 text-center font-poppins">
             Welcome to
           </h1>
-          <h2 className="text-xl sm:text-2xl font-semibold text-primary text-center mt-1 font-poppins">
-            SKSSF Muttippadi Online Quiz
+          <h2 className="text-xl sm:text-2xl font-semibold text-primary text-center mt-1 font-poppins uppercase tracking-wider">
+            SKSSF MUTTIPADI UNIT
           </h2>
+          <h3 className="text-sm font-bold text-brand-gold tracking-[0.2em] mt-2">ONLINE QUIZ 2026</h3>
         </div>
 
         <div className="bg-white/60 rounded-xl p-6 mb-8 border border-white/50">
@@ -43,36 +44,36 @@ const WelcomeScreen: React.FC = () => {
               Instructions
             </h3>
             <div className="mt-1 flex flex-col pl-7">
-              <p className="text-sm sm:text-base text-danger font-bold tracking-wide">Read carefully and understand before proceeding!</p>
-              <p className="text-xs sm:text-sm text-danger/90 font-bold font-malayalam mt-0.5">തുടരുന്നതിന് മുൻപ് താഴെ പറയുന്നവ ശ്രദ്ധാപൂർവ്വം വായിച്ചു മനസ്സിലാക്കുക.</p>
+              <p className="text-sm sm:text-base text-red-500 font-bold tracking-wide">Read carefully and understand before proceeding!</p>
+              <p className="text-xs sm:text-sm text-red-500/90 font-bold font-malayalam mt-0.5">തുടരുന്നതിന് മുൻപ് താഴെ പറയുന്നവ ശ്രദ്ധാപൂർവ്വം വായിച്ചു മനസ്സിലാക്കുക.</p>
             </div>
           </div>
           
           <ul className="space-y-5">
             <li className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-secondary shrink-0 mt-1" />
+              <Clock className="w-5 h-5 text-brand-gold shrink-0 mt-1" />
               <div className="flex flex-col">
                 <span className="text-slate-700 font-medium">Duration: 15 Minutes. The timer will start automatically.</span>
                 <span className="text-slate-500 text-sm mt-0.5 font-malayalam">സമയം: 15 മിനിറ്റ്. ടൈമർ യാന്ത്രികമായി ആരംഭിക്കുന്നതാണ്.</span>
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <BookOpen className="w-5 h-5 text-secondary shrink-0 mt-1" />
+              <BookOpen className="w-5 h-5 text-brand-gold shrink-0 mt-1" />
               <div className="flex flex-col">
                 <span className="text-slate-700 font-medium">Format: Multiple Choice Questions.</span>
                 <span className="text-slate-500 text-sm mt-0.5 font-malayalam">ഫോർമാറ്റ്: മൾട്ടിപ്പിൾ ചോയ്‌സ് ചോദ്യങ്ങൾ.</span>
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <ShieldAlert className="w-5 h-5 text-secondary shrink-0 mt-1" />
+              <ShieldAlert className="w-5 h-5 text-brand-gold shrink-0 mt-1" />
               <div className="flex flex-col">
                 <span className="text-slate-700 font-medium">One Attempt Only: Do not refresh or close the tab during the quiz.</span>
                 <span className="text-slate-500 text-sm mt-0.5 font-malayalam">ഒറ്റത്തവണ മാത്രം: ക്വിസ് നടക്കുന്നതിനിടയിൽ പേജ് റിഫ്രഷ് ചെയ്യുകയോ ക്ലോസ് ചെയ്യുകയോ ചെയ്യരുത്.</span>
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 mt-1">
-                <div className="w-2.5 h-2.5 bg-secondary rounded-full"></div>
+              <div className="w-5 h-5 rounded-full border-2 border-brand-gold flex items-center justify-center shrink-0 mt-1">
+                <div className="w-2.5 h-2.5 bg-brand-gold rounded-full"></div>
               </div>
               <div className="flex flex-col">
                 <span className="text-slate-700 font-medium">Unique Mobile Number: A mobile number can only be used by one student.</span>
@@ -80,8 +81,8 @@ const WelcomeScreen: React.FC = () => {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 mt-1">
-                <div className="w-2.5 h-2.5 bg-secondary rounded-full"></div>
+              <div className="w-5 h-5 rounded-full border-2 border-brand-gold flex items-center justify-center shrink-0 mt-1">
+                <div className="w-2.5 h-2.5 bg-brand-gold rounded-full"></div>
               </div>
               <div className="flex flex-col">
                 <span className="text-slate-700 font-medium">Internet Required: Ensure you have a stable connection.</span>
@@ -89,8 +90,8 @@ const WelcomeScreen: React.FC = () => {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full border-2 border-warning flex items-center justify-center shrink-0 mt-1">
-                <div className="w-2.5 h-2.5 bg-warning rounded-full"></div>
+              <div className="w-5 h-5 rounded-full border-2 border-orange-400 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-2.5 h-2.5 bg-orange-400 rounded-full"></div>
               </div>
               <div className="flex flex-col">
                 <span className="text-slate-700 font-medium">Auto Submit: The quiz will automatically submit when the time ends.</span>
@@ -98,7 +99,7 @@ const WelcomeScreen: React.FC = () => {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-danger shrink-0 mt-1" />
+              <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-1" />
               <div className="flex flex-col">
                 <span className="text-slate-700 font-medium">Save Reference Number: Please take a screenshot of the reference number shown at the end.</span>
                 <span className="text-slate-500 text-sm mt-0.5 font-malayalam">റഫറൻസ് നമ്പർ: ക്വിസ് അവസാനിക്കുമ്പോൾ ലഭിക്കുന്ന റഫറൻസ് നമ്പറിന്റെ സ്ക്രീൻഷോട്ട് എടുത്തു സൂക്ഷിക്കേണ്ടതാണ്.</span>
@@ -120,4 +121,4 @@ const WelcomeScreen: React.FC = () => {
   );
 };
 
-export default WelcomeScreen;
+export default FirstInstructionsScreen;

@@ -7,7 +7,7 @@ export interface StudentDetails {
   fatherName: string;
   familyName: string;
   phone: string;
-  email: string;
+  email?: string; // Optional
 }
 
 export type QuizStatus = 'not_started' | 'in_progress' | 'submitted';
@@ -20,9 +20,13 @@ interface QuizState {
   timeRemaining: number;
   currentQuestionIndex: number;
   referenceNumber: string | null;
+  visitedQuestions: Record<string, boolean>;
+  markedForReview: Record<string, boolean>;
   initializeQuiz: (bank: Question[], count: number) => void;
   setStudentDetails: (details: StudentDetails) => void;
   setAnswer: (questionId: string, answer: string) => void;
+  markVisited: (questionId: string) => void;
+  toggleMarkForReview: (questionId: string) => void;
   setStatus: (status: QuizStatus) => void;
   decrementTime: () => void;
   setCurrentQuestionIndex: (index: number) => void;
@@ -38,16 +42,17 @@ export const useQuizStore = create<QuizState>()(
       studentDetails: null,
       activeQuestions: [],
       answers: {},
+      visitedQuestions: {},
+      markedForReview: {},
       status: 'not_started',
       timeRemaining: INITIAL_TIME,
       currentQuestionIndex: 0,
       referenceNumber: null,
 
       initializeQuiz: (bank, count) => {
-        // Shuffle the bank array and pick the first `count` elements
         const shuffled = [...bank].sort(() => 0.5 - Math.random());
         const selected = shuffled.slice(0, count);
-        set({ activeQuestions: selected });
+        set({ activeQuestions: selected, visitedQuestions: {}, markedForReview: {} });
       },
 
       setStudentDetails: (details) => set({ studentDetails: details }),
@@ -57,6 +62,22 @@ export const useQuizStore = create<QuizState>()(
           answers: {
             ...state.answers,
             [questionId]: answer
+          }
+        })),
+
+      markVisited: (questionId) =>
+        set((state) => ({
+          visitedQuestions: {
+            ...state.visitedQuestions,
+            [questionId]: true
+          }
+        })),
+
+      toggleMarkForReview: (questionId) =>
+        set((state) => ({
+          markedForReview: {
+            ...state.markedForReview,
+            [questionId]: !state.markedForReview[questionId]
           }
         })),
 
@@ -137,6 +158,8 @@ export const useQuizStore = create<QuizState>()(
         studentDetails: null,
         activeQuestions: [],
         answers: {},
+        visitedQuestions: {},
+        markedForReview: {},
         status: 'not_started',
         timeRemaining: INITIAL_TIME,
         currentQuestionIndex: 0,
@@ -149,6 +172,8 @@ export const useQuizStore = create<QuizState>()(
         studentDetails: state.studentDetails,
         activeQuestions: state.activeQuestions,
         answers: state.answers,
+        visitedQuestions: state.visitedQuestions,
+        markedForReview: state.markedForReview,
         status: state.status,
         timeRemaining: state.timeRemaining,
         currentQuestionIndex: state.currentQuestionIndex,

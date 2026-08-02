@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import SplashScreen from './screens/SplashScreen';
-import WelcomeScreen from './screens/WelcomeScreen';
+import FirstInstructionsScreen from './screens/FirstInstructionsScreen';
 import StudentDetailsScreen from './screens/StudentDetailsScreen';
 import QuizScreen from './screens/QuizScreen';
 import SecondInstructionsScreen from './screens/SecondInstructionsScreen';
@@ -12,11 +12,11 @@ import SubmissionScreen from './screens/SubmissionScreen';
 const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.3 }}
-      className="w-full h-full"
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 1.02 }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      className="w-full flex-1 flex flex-col"
     >
       {children}
     </motion.div>
@@ -30,7 +30,7 @@ const AnimatedRoutes = () => {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><SplashScreen /></PageWrapper>} />
-        <Route path="/welcome" element={<PageWrapper><WelcomeScreen /></PageWrapper>} />
+        <Route path="/instructions-1" element={<PageWrapper><FirstInstructionsScreen /></PageWrapper>} />
         <Route path="/instructions-2" element={<PageWrapper><SecondInstructionsScreen /></PageWrapper>} />
         <Route path="/details" element={<PageWrapper><StudentDetailsScreen /></PageWrapper>} />
         <Route path="/quiz" element={<PageWrapper><QuizScreen /></PageWrapper>} />
@@ -56,8 +56,6 @@ const App: React.FC = () => {
 
     // 3. Warn before leaving
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      // Only warn if they are in the quiz (we can't check zustand state easily here without subscribing, 
-      // but returning a string triggers the browser default warning for any active interaction)
       e.preventDefault();
       e.returnValue = '';
       return '';
@@ -80,7 +78,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="w-full min-h-screen bg-background font-inter text-slate-800">
+      <div className="min-h-[100dvh] w-full bg-brand-light relative overflow-x-hidden flex flex-col">
         <AnimatedRoutes />
       </div>
     </Router>

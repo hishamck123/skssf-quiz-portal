@@ -8,9 +8,9 @@ const SecondInstructionsScreen: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 sm:p-8 relative">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary-light rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob animation-delay-2000"></div>
+    <div className="min-h-[100dvh] w-full bg-background flex flex-col items-center py-12 px-4 sm:px-8 relative overflow-y-auto">
+      <div className="fixed top-0 right-0 w-64 h-64 bg-primary-light rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob"></div>
+      <div className="fixed bottom-0 left-0 w-64 h-64 bg-accent rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 animate-blob animation-delay-2000"></div>
 
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
