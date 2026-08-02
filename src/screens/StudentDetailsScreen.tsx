@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useQuizStore, type StudentDetails } from '../store/quizStore';
 import { quizQuestions } from '../utils/questions';
@@ -30,7 +30,6 @@ const StudentDetailsScreen: React.FC = () => {
   const [isCheckingPhone, setIsCheckingPhone] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [showExitTransition, setShowExitTransition] = useState(false);
-  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const [formData, setFormData] = useState<StudentDetails>({
     name: studentDetails?.name || '',
@@ -168,9 +167,8 @@ const StudentDetailsScreen: React.FC = () => {
               icon={<User size={20} />}
               type="text"
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              onFocus={() => setFocusedField('name')}
-              onBlur={() => setFocusedField(null)}
+              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+              placeholder="e.g. Mohammed Ali"
               error={errors.name}
               delay={0.2}
             />
@@ -180,9 +178,8 @@ const StudentDetailsScreen: React.FC = () => {
               icon={<User size={20} />}
               type="text"
               value={formData.fatherName}
-              onChange={(e) => setFormData({ ...formData, fatherName: e.target.value })}
-              onFocus={() => setFocusedField('fatherName')}
-              onBlur={() => setFocusedField(null)}
+              onChange={(e) => setFormData(prev => ({ ...prev, fatherName: e.target.value }))}
+              placeholder="e.g. Abdul Rahman"
               error={errors.fatherName}
               delay={0.32}
             />
@@ -192,9 +189,8 @@ const StudentDetailsScreen: React.FC = () => {
               icon={<Home size={20} />}
               type="text"
               value={formData.familyName}
-              onChange={(e) => setFormData({ ...formData, familyName: e.target.value })}
-              onFocus={() => setFocusedField('familyName')}
-              onBlur={() => setFocusedField(null)}
+              onChange={(e) => setFormData(prev => ({ ...prev, familyName: e.target.value }))}
+              placeholder="e.g. Pookkottur"
               error={errors.familyName}
               delay={0.44}
             />
@@ -204,9 +200,8 @@ const StudentDetailsScreen: React.FC = () => {
               icon={<Phone size={20} />}
               type="tel"
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '').slice(0, 10) })}
-              onFocus={() => setFocusedField('phone')}
-              onBlur={() => setFocusedField(null)}
+              onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value.replace(/\D/g, '').slice(0, 10) }))}
+              placeholder="e.g. 9876543210"
               error={errors.phone}
               delay={0.56}
             />
@@ -216,9 +211,8 @@ const StudentDetailsScreen: React.FC = () => {
               icon={<Mail size={20} />}
               type="email"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              onFocus={() => setFocusedField('email')}
-              onBlur={() => setFocusedField(null)}
+              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+              placeholder="e.g. example@email.com"
               error={errors.email}
               delay={0.68}
             />

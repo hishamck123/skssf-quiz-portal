@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useQuizStore } from '../store/quizStore';
 import { useNetworkStatus } from '../hooks/useNetworkStatus';
-import { Bookmark, ChevronLeft, ChevronRight, Grid, Check, WifiOff, Wifi, AlertTriangle } from 'lucide-react';
+import { Bookmark, ChevronLeft, ChevronRight, Grid, Check, WifiOff, AlertTriangle } from 'lucide-react';
 import BottomSheet from '../components/BottomSheet';
 
 const CircularTimer = ({ progress, timeRemaining, isDanger }: { progress: number, timeRemaining: number, isDanger: boolean }) => {
