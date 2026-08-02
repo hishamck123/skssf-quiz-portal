@@ -168,7 +168,6 @@ const StudentDetailsScreen: React.FC = () => {
               type="text"
               value={formData.name}
               onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-              placeholder="e.g. Mohammed Ali"
               error={errors.name}
               delay={0.2}
             />
@@ -179,7 +178,6 @@ const StudentDetailsScreen: React.FC = () => {
               type="text"
               value={formData.fatherName}
               onChange={(e) => setFormData(prev => ({ ...prev, fatherName: e.target.value }))}
-              placeholder="e.g. Abdul Rahman"
               error={errors.fatherName}
               delay={0.32}
             />
@@ -190,7 +188,6 @@ const StudentDetailsScreen: React.FC = () => {
               type="text"
               value={formData.familyName}
               onChange={(e) => setFormData(prev => ({ ...prev, familyName: e.target.value }))}
-              placeholder="e.g. Pookkottur"
               error={errors.familyName}
               delay={0.44}
             />
@@ -201,7 +198,6 @@ const StudentDetailsScreen: React.FC = () => {
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value.replace(/\D/g, '').slice(0, 10) }))}
-              placeholder="e.g. 9876543210"
               error={errors.phone}
               delay={0.56}
             />
@@ -212,7 +208,6 @@ const StudentDetailsScreen: React.FC = () => {
               type="email"
               value={formData.email}
               onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-              placeholder="e.g. example@email.com"
               error={errors.email}
               delay={0.68}
             />
